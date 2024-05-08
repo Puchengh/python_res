@@ -1,0 +1,101 @@
+# def foo():
+#     print('foo')
+#
+# def func():
+#     print('func')
+#
+# foo = func  #函数也是一个变量，会把函数的地址赋值给另外一个变量
+# foo()
+
+
+'''
+遵循开放封闭原则
+装饰器：
+遵循开放封闭原则  在不改变原函数的情况下，扩展了函数的功能
+
+定义：(遵循闭包的原则)
+def xxx(func):
+    def xxx():
+        .....
+        func()
+        ....
+        reruen yyy
+    :return xxx
+
+装饰
+@装饰器名   --->原函数=装饰(原函数)
+def  原函数():
+    pass
+
+
+先定义一个装饰器
+装饰器的功能:
+1.引入日志
+2.函数执行时间统计
+3.执行函数前预备处理
+4.执行函数后清理功能
+5.权限校验等场景
+6.缓存
+
+'''
+
+# def decorater(func):   #必须传参数
+#     print('------------------------>1')
+#     def wrapper():
+#         func()
+#         print('刷漆')
+#         print('铺地板')
+#     print('------------------------>2')
+#     return wrapper
+#
+# @decorater
+# def house():
+#     print('毛坯房')
+
+
+# house()
+
+'''
+带参数的装饰器
+如果原函数有参数则装饰器内部函数也要有参数
+'''
+
+
+# def decorater(func):
+#
+#     #args是一个元组  ('北京沙河', 1000)
+#     def wrapper(*args,**kwargs):  # address = '北京四合院'
+#         func(*args,**kwargs)  # func就是house
+#         print('刷漆')
+#         print('铺地板')
+#
+#     return wrapper
+#
+#
+# @decorater
+# def house(address):
+#     print('房子的地址在哪里:{}是个毛坯房'.format(address))
+#
+#
+# @decorater
+# def changfang(address, area):
+#     print('房子的地址在哪里:{}是个毛坯房,建筑面积是：{}平米'.format(address, area))
+#
+# @decorater
+# def hotel(name,address,area=40):
+#     print('酒店的名字:{}是个毛坯房,地址在是：{}，单间的建筑面积:{}平米'.format(name, address, area))
+#
+#
+# hotel( '维也纳','深圳',area=50)
+# # hotel(name = '维也纳',address = '深圳')
+#
+# # house('北京四合院')  #house 就是wrapper()
+#
+#
+# # changfang('北京沙河', 1000)
+
+
+'''
+装饰器修饰有放回值的函数
+
+'''
