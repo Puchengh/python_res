@@ -20,6 +20,10 @@ data = aa.read_excel('E:/study/py/python_study/3Spider/file/MOCK_DATA.xlsx')
 # write.close()
 
 
+
+
+
+
 print(data[data['gender'].str.contains('Female')])
 
 type_list=set(z for i in data['gender'] for z in i.split(' '))
