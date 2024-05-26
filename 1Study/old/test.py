@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # @Time : 2022/1/9 11:38
 # @Author : puchen
-# @File : test.py
+# @File : translate.py
 
 # print("1")
 #

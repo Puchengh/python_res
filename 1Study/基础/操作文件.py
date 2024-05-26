@@ -77,7 +77,7 @@ os.path.dirname(__file__)  获取当前文件所在的文件目录（绝对路�
 
 # 通过相对路径得到绝对路径
 
-# path = os.path.abspath('test.py')
+# path = os.path.abspath('translate.py')
 # print(path)
 
 # path = os.path.abspath(__file__)
