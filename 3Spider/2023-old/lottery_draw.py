@@ -15,13 +15,13 @@ heros = ['黑暗之女', '狂战士', '正义巨像', '卡牌大师', '德邦总
 
 @app.route('/index')
 def index():
-    return render_template('index.html', heross=heros)
+    return render_template('templates/index.html', heross=heros)
 
 
 @app.route('/lottery')
 def lottery():
     num = randint(0, len(heros) - 1)
-    return render_template('index.html', heross=heros, h=heros[num])
+    return render_template('templates/index.html', heross=heros, h=heros[num])
 
 
 app.run(debug=True)

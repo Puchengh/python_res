@@ -5,15 +5,14 @@ import os
 
 os.environ['PYSPARK_PYTHON'] = "E:/soft/anaconda3/envs/python38/python.exe"
 
+
+# 这个main就是一个函数，是程序的主入口
 if __name__ == '__main__':
     sc = SparkContext(master="local[*]", appName="pyspark")
     sc.setLogLevel("ERROR")
     ssc = StreamingContext(sc, 5)
-
     lines = ssc.socketTextStream("study", 9999)
-
     result = lines.flatMap(lambda x: x.split(" ")).map(lambda x: (x, 1)).reduceByKey(lambda a, b: a + b)
-
     result.pprint()
     ssc.start()
     ssc.awaitTermination()

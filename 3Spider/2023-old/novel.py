@@ -21,7 +21,7 @@ while True:
     # print(info)
     print(title)
 
-    with open('./novel/斗罗大陆.txt', 'a', encoding='utf-8') as f:
+    with open('novel/斗罗大陆.txt', 'a', encoding='utf-8') as f:
         f.write(title + '\n\n' + info + '\n\n')
 
     #退出循环

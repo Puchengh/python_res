@@ -23,7 +23,7 @@ def get_phone(phone):
 
 @app.route('/')
 def index():
-    return render_template("phone.html")
+    return render_template("templates/phone.html")
 
 @app.route('/search_phone')
 def search_phone():

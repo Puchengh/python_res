@@ -14,7 +14,7 @@ data = [{'id': 0, 'name': '中秋节', 'num': 0},
 
 @app.route('/index')
 def index():
-    return render_template('index_like.html',data =data)
+    return render_template('templates/index_like.html', data =data)
 
 @app.route('/dainzan')
 def dainzan():
@@ -22,6 +22,6 @@ def dainzan():
     print(f'想要给{id}点赞!')
 
     data[int(id)]['num'] += 1
-    return render_template('index_like.html',data =data)
+    return render_template('templates/index_like.html', data =data)
 
 app.run(debug=True)
